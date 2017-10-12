@@ -1,6 +1,6 @@
 pipeline { 
     agent { 
-        any 
+        any
     } 
     parameters { 
         choice(choices: 'CI\nDEV\nPROD', description: 'Target Env', name: 'targetEnvironment')
