@@ -8,17 +8,25 @@ pipeline {
     }
     stages {
         stage('Initialize') { 
-            echo "params: $params" 
+            steps { 
+                echo "params: $params" 
+            }
         }
         stage('Build') { 
-            sh 'env'
-            echo "mvn clean package"
+            steps { 
+                sh 'env'
+                echo "mvn clean package"
+            }
         }
         stage('Test') { 
-            echo "Running Tests"
+            steps { 
+                echo "Running Tests"
+            }
         }
         stage('Deploy') { 
-            echo "Deployment Target: $params['targetEnvironment']" 
+            steps { 
+                echo "Deployment Target: $params['targetEnvironment']" 
+            }
         }
     }
 
