@@ -1,5 +1,6 @@
 pipeline { 
     agent any 
+    /* This is a comment */
     triggers { 
         pollSCM('*/2 * * * *') 
     } 
