@@ -1,6 +1,9 @@
 pipeline { 
     agent { 
         any
+    }
+    triggers { 
+        pollSCM('*/2 * * * *') 
     } 
     parameters { 
         choice(choices: 'CI\nDEV\nPROD', description: 'Target Env', name: 'targetEnvironment')
